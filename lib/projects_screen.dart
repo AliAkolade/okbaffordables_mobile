@@ -12,7 +12,7 @@ class AllProjects extends StatefulWidget {
 class AllProjectsState extends State<AllProjects> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: Column(children: [])));
+    return const Scaffold();
   }
 
   @override
