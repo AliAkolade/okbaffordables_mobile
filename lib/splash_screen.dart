@@ -15,12 +15,6 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return FlutterSplashScreen.fadeIn(
         backgroundColor: Colors.white,
-        onInit: () {
-          debugPrint("On Init");
-        },
-        onEnd: () {
-          debugPrint("On End");
-        },
         childWidget: SizedBox(
             height: 250,
             width: 250,

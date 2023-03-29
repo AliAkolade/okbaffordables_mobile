@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class OKBColors {
   static const mainColor = Color.fromRGBO(0, 204, 255, 1);
+  static const secColor = Color.fromRGBO(151, 190, 3, 1);
 }
 
 class OKBStyles {
@@ -73,5 +74,25 @@ class _OKBTextButtonState extends State<OKBTextButton> {
             foregroundColor: Colors.white,
             textStyle: const TextStyle(fontSize: 20)),
         child: widget.child);
+  }
+}
+
+class OKBAppBar extends StatefulWidget implements PreferredSizeWidget {
+  const OKBAppBar({super.key});
+
+  @override
+  State<OKBAppBar> createState() => _OKBAppBarState();
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class _OKBAppBarState extends State<OKBAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+        leading:
+            IconButton(icon: const Icon(Icons.menu_outlined), onPressed: () {}),
+        backgroundColor: OKBColors.mainColor.withOpacity(1));
   }
 }

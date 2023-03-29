@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter/scheduler.dart";
 import "package:flutter_image_slideshow/flutter_image_slideshow.dart";
+import "package:okbaffordables/projects_screen.dart";
 import "package:okbaffordables/utils.dart";
 
 class Welcome extends StatefulWidget {
@@ -21,7 +22,7 @@ class WelcomeState extends State<Welcome> {
         body: SafeArea(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
           SizedBox(
@@ -48,7 +49,7 @@ class WelcomeState extends State<Welcome> {
                         borderRadius: const BorderRadius.vertical(
                             bottom: Radius.circular(20)),
                         child: SizedBox.fromSize(
-                            child: Image.asset('assets/images/welcomePic3.png',
+                            child: Image.asset('assets/images/welcomePic3.jpg',
                                 fit: BoxFit.cover))),
                     ClipRRect(
                         borderRadius: const BorderRadius.vertical(
@@ -70,12 +71,13 @@ class WelcomeState extends State<Welcome> {
                                 fit: BoxFit.cover)))
                   ])),
           Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
+                    const SizedBox(height: 40),
                     Text("Buy your dream house with comfort and ease",
                         textAlign: TextAlign.center,
                         style: OKBStyles.titleText),
@@ -86,7 +88,13 @@ class WelcomeState extends State<Welcome> {
                         style: OKBStyles.bodyText),
                     const SizedBox(height: 15),
                     OKBFlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AllProjects()),
+                          );
+                        },
                         padding: 60,
                         child: Text("Get Started", style: OKBStyles.boldText)),
                     const SizedBox(height: 0),
@@ -101,7 +109,8 @@ class WelcomeState extends State<Welcome> {
                                   TextSpan(
                                       text: 'Log In',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold))
+                                          fontWeight: FontWeight.bold,
+                                          color: OKBColors.mainColor))
                                 ]))),
                     const SizedBox(height: 10)
                   ]))
