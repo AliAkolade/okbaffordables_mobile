@@ -23,7 +23,7 @@ class WelcomeState extends State<Welcome> {
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 children: [
           SizedBox(
               height: imageHeight,
@@ -77,7 +77,7 @@ class WelcomeState extends State<Welcome> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 30),
                     Text("Buy your dream house with comfort and ease",
                         textAlign: TextAlign.center,
                         style: OKBStyles.titleText),
@@ -112,7 +112,6 @@ class WelcomeState extends State<Welcome> {
                                           fontWeight: FontWeight.bold,
                                           color: OKBColors.mainColor))
                                 ]))),
-                    const SizedBox(height: 10)
                   ]))
         ])));
   }
